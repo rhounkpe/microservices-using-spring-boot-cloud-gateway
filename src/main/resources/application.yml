@@ -40,5 +40,13 @@ management:
     web:
       exposure:
         include: hystrix.stream
-
-
+eureka:
+  instance:
+    hostname: eureka-0
+    # hostname: "${HOSTNAME}.eureka"
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      # defaultZone: ${EUREKA_SERVER_ADDRESS}
+      defaultZone: http://eureka-0.eureka.default.svc.cluster.local:8761/eureka
